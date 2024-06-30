@@ -24,7 +24,7 @@ func _on_host_pressed():
 	if multiplayer.multiplayer_peer != null:
 		multiplayer.multiplayer_peer = null
 
-	peer.create_server(port_line_edit.text.to_int())
+	peer.create_server(775)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_add_player)
 	multiplayer.peer_disconnected.connect(_remove_player)
