@@ -47,14 +47,10 @@ size_flags_horizontal = 4
 text = "Join"
 
 [node name="IPDialog" type="AcceptDialog" parent="VBoxContainer"]
-title = "IP address"
 
 [node name="IPLineEdit" type="LineEdit" parent="VBoxContainer/IPDialog"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 92.0
-offset_bottom = 51.0
-text = "82.150.39.25"
+offset_right = 67.0625
+offset_bottom = 31.0
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Characters/character_body_2d.tscn")
