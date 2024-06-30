@@ -12,8 +12,13 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://Game/node_2d.tscn")
+	get_tree().change_scene_to_file("res://Characters/character_body_2d.tscn")
+
 
 
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+func _on_multi_button_pressed():
+	get_tree().change_scene_to_file("res://Multiplayer Test/Mutliplayer_test.tscn")

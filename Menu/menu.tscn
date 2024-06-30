@@ -27,10 +27,14 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="Buttons"]
+[node name="HostButton" type="Button" parent="Buttons"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "Start"
+
+[node name="MultiButton" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Multiplayer"
 
 [node name="OptionsButton" type="Button" parent="Buttons"]
 layout_mode = 2
@@ -56,5 +60,6 @@ grow_vertical = 2
 text = "Project A"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/HostButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/MultiButton" to="." method="_on_multi_button_pressed"]
 [connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
