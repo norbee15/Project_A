@@ -33,3 +33,15 @@ func _add_player(id = 1):
 func _on_join_pressed():
 	peer.create_client("82.150.39.25", 135)
 	multiplayer.multiplayer_peer = peer
+	peer.connect("connection_failed", self, "_on_connection_failed")
+	peer.connect("connection_succeeded", self, "_on_connection_succeeded")
+	peer.connect("server_disconnected", self, "_on_server_disconnected")
+
+func _on_connection_failed():
+	print("Connection failed!")
+
+func _on_connection_succeeded():
+	print("Connection succeeded!")
+
+func _on_server_disconnected():
+	print("Disconnected from server!")
