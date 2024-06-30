@@ -11,7 +11,6 @@ func _process(delta):
 
 func _on_host_pressed():
 	if multiplayer.multiplayer_peer != null:
-		multiplayer.multiplayer_peer.close_connection()
 		multiplayer.multiplayer_peer = null
 
 	peer.create_server(135)
@@ -36,7 +35,6 @@ func _remove_player(id):
 
 func _on_join_pressed():
 	if multiplayer.multiplayer_peer != null:
-		multiplayer.multiplayer_peer.close_connection()
 		multiplayer.multiplayer_peer = null
 
 	var result = peer.create_client("82.150.39.25", 135)
