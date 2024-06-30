@@ -7,6 +7,9 @@ var peer = ENetMultiplayerPeer.new()
 @onready var ip_dialog = $VBoxContainer/IPDialog
 @onready var ip_line_edit = $VBoxContainer/IPDialog/VBoxContainer/PortLineEdit
 @onready var port_line_edit = $VBoxContainer/IPDialog/VBoxContainer/IPLineEdit
+@onready var host_button : Button = $VBoxContainer/Host
+@onready var join_button : Button = $VBoxContainer/Join
+@onready var ingameexit_button : Button = $inGameExit
 
 func _ready():
 	# Csatlakoztatjuk a dialog gombokhoz tartozó signalokat
@@ -21,11 +24,14 @@ func _on_host_pressed():
 	if multiplayer.multiplayer_peer != null:
 		multiplayer.multiplayer_peer = null
 
-	peer.create_server(775)
+	peer.create_server(port_line_edit.text.to_int())
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_add_player)
 	multiplayer.peer_disconnected.connect(_remove_player)
 	_add_player()
+	host_button.hide()
+	join_button.hide()
+	ingameexit_button.show()
 
 	print("Hosting server on port 775")
 
@@ -75,3 +81,7 @@ func _on_connected_to_server():
 
 func _on_connection_failed():
 	print("Failed to connect to server")
+
+
+func _on_button_pressed():
+	get_tree().quit()
