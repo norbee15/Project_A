@@ -54,12 +54,12 @@ text = "Join"
 
 [node name="IPDialog" type="AcceptDialog" parent="VBoxContainer"]
 title = "IP address"
-size = Vector2i(200, 123)
+size = Vector2i(100, 123)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/IPDialog"]
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 192.0
+offset_right = 92.0
 offset_bottom = 74.0
 
 [node name="PortLineEdit" type="LineEdit" parent="VBoxContainer/IPDialog/VBoxContainer"]
@@ -91,17 +91,10 @@ offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NameInputPanel"]
+[node name="NameInputField" type="LineEdit" parent="NameInputPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="NameInputField" type="LineEdit" parent="NameInputPanel/VBoxContainer"]
-layout_mode = 2
-
-[node name="OKButton" type="Button" parent="NameInputPanel/VBoxContainer"]
-layout_mode = 2
-text = "OK"
+offset_right = 67.0625
+offset_bottom = 31.0
 
 [connection signal="pressed" from="inGameExit" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Host" to="." method="_on_host_pressed"]

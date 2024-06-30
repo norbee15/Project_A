@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dg73eqjpkn0ae"]
 
 [ext_resource type="Script" path="res://Characters/character_body_2d.gd" id="1_dpvlu"]
-[ext_resource type="Texture2D" uid="uid://chh3pwyh15ikh" path="res://icon.svg" id="1_hieye"]
+[ext_resource type="Texture2D" uid="uid://de1a3eeiess7y" path="res://Characters/alap1.png" id="2_t6y3g"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sxqhg"]
 properties/0/path = NodePath(".:position")
@@ -26,8 +26,8 @@ func _process(delta):
 script = ExtResource("1_dpvlu")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(202, 427)
-texture = ExtResource("1_hieye")
+position = Vector2(197, 499)
+texture = ExtResource("2_t6y3g")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_sxqhg")
