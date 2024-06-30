@@ -78,6 +78,9 @@ func _on_ip_dialog_closed():
 func _on_connected_to_server():
 	print("Successfully connected to server")
 	#_add_player(get_tree().get_network_unique_id())
+	host_button.visible = false
+	join_button.visible = false
+	ingameexit_button.show()
 
 func _on_connection_failed():
 	print("Failed to connect to server")
