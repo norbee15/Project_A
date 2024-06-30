@@ -5,7 +5,8 @@ var peer = ENetMultiplayerPeer.new()
 
 # Referencia az IP cím beviteli ablakához és a LineEdit-hez
 @onready var ip_dialog = $VBoxContainer/IPDialog
-@onready var ip_line_edit = $VBoxContainer/IPDialog/IPLineEdit
+@onready var ip_line_edit = $VBoxContainer/IPDialog/VBoxContainer/PortLineEdit
+@onready var port_line_edit = $VBoxContainer/IPDialog/VBoxContainer/IPLineEdit
 
 func _ready():
 	# Csatlakoztatjuk a dialog gombokhoz tartozó signalokat
@@ -46,29 +47,31 @@ func _on_join_pressed():
 
 func _on_ip_dialog_confirmed():
 	var ip_address = ip_line_edit.text
-	#if ip_address
-		#print("No IP address entered")
-		#return
+	var ip_port = port_line_edit.text.to_int()
+	if ip_address == "":
+		print("No IP address entered")
+		return
 
 	if multiplayer.multiplayer_peer != null:
 		multiplayer.multiplayer_peer = null
 
-	var result = peer.create_client(ip_address, 775)
+	var result = peer.create_client(ip_address, ip_port)
 	if result == OK:
 		multiplayer.multiplayer_peer = peer
 		multiplayer.connected_to_server.connect(_on_connected_to_server)
 		multiplayer.connection_failed.connect(_on_connection_failed)
 
-		print("Attempting to join server at " + ip_address + ":775")
+		print("Attempting to join server at " + ip_address + ":" + str(ip_port))
 	else:
 		print("Failed to create client:", result)
 
 func _on_ip_dialog_closed():
 	ip_line_edit.text = ""
+	port_line_edit.text = ""
 
 func _on_connected_to_server():
 	print("Successfully connected to server")
-	_add_player(get_tree().get_network_unique_id())
+	#_add_player(get_tree().get_network_unique_id())
 
 func _on_connection_failed():
 	print("Failed to connect to server")
