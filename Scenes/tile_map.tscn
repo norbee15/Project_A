@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jm3yqwch7ytu"]
+[gd_scene load_steps=30 format=3 uid="uid://jm3yqwch7ytu"]
 
 [ext_resource type="Texture2D" uid="uid://vgkut83lo3wn" path="res://Tilesets/TX Tileset Grass.png" id="1_l3yx7"]
 [ext_resource type="Texture2D" uid="uid://bqu6dy2kl1t6j" path="res://Tilesets/TX Tileset Stone Ground.png" id="2_1objv"]
@@ -3039,22 +3039,64 @@ sources/2 = SubResource("TileSetAtlasSource_5y2pp")
 sources/3 = SubResource("TileSetAtlasSource_72f4o")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf86c"]
-size = Vector2(301.125, 120)
+size = Vector2(80.125, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7ddr"]
-size = Vector2(259, 269)
+size = Vector2(75, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpx70"]
-size = Vector2(516, 255)
+size = Vector2(52, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iqe0"]
-size = Vector2(523, 171)
+size = Vector2(51, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksoq8"]
-size = Vector2(563, 65)
+size = Vector2(64.5, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwcc0"]
+size = Vector2(50, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dearc"]
+size = Vector2(50, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7va8"]
+size = Vector2(50, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6m1s"]
+size = Vector2(50, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0b1v"]
+size = Vector2(50, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67m2o"]
+size = Vector2(54, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0osw"]
+size = Vector2(58, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbncp"]
-size = Vector2(336, 36)
+size = Vector2(50, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34jwd"]
+size = Vector2(50, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwkhy"]
+size = Vector2(51, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4rqr"]
+size = Vector2(51, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lae63"]
+size = Vector2(51, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nns01"]
+size = Vector2(56.5, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svsyw"]
+size = Vector2(56.5, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcwpx"]
+size = Vector2(56.5, 46)
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_3825d")
@@ -3068,61 +3110,89 @@ layer_1/tile_data = PackedInt32Array(1572906, 131074, 12, 1638442, 131074, 13, 1
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="area1" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(13.4375, -177)
+position = Vector2(9, -168)
 shape = SubResource("RectangleShape2D_jf86c")
 
 [node name="area2" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(11.5, 81.5)
+position = Vector2(21, 59)
 shape = SubResource("RectangleShape2D_w7ddr")
 
 [node name="area3" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(14, 390.5)
+position = Vector2(22, 485)
 shape = SubResource("RectangleShape2D_vpx70")
 
 [node name="area4" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(9.5, -392.5)
+position = Vector2(10, -393)
 shape = SubResource("RectangleShape2D_2iqe0")
 
 [node name="area5" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(-481, 76.5)
+position = Vector2(-725, 77)
 shape = SubResource("RectangleShape2D_ksoq8")
 
 [node name="area6" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(501, 83)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(707, 88)
+shape = SubResource("RectangleShape2D_pwcc0")
 
 [node name="area7" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(599, -163)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(728, -160)
+shape = SubResource("RectangleShape2D_dearc")
 
 [node name="area8" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(589, -409)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(705, -417)
+shape = SubResource("RectangleShape2D_c7va8")
 
 [node name="area9" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(581, 297)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(721, 300)
+shape = SubResource("RectangleShape2D_b6m1s")
 
 [node name="area10" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(599, 493)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(734, 496)
+shape = SubResource("RectangleShape2D_a0b1v")
 
 [node name="area11" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(-581, 498)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(-715, 497)
+shape = SubResource("RectangleShape2D_67m2o")
 
 [node name="area12" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(-579, 292)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(-718, 292)
+shape = SubResource("RectangleShape2D_a0osw")
 
 [node name="area13" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
 position = Vector2(-577, -177)
 shape = SubResource("RectangleShape2D_lbncp")
 
 [node name="area14" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
-position = Vector2(581, 297)
-shape = SubResource("RectangleShape2D_lbncp")
+position = Vector2(445, 376)
+shape = SubResource("RectangleShape2D_34jwd")
 
 [node name="area15" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
 position = Vector2(-573, -429)
 shape = SubResource("RectangleShape2D_lbncp")
+
+[node name="area16" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(-188, -396)
+shape = SubResource("RectangleShape2D_kwkhy")
+
+[node name="area17" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(181, -390)
+shape = SubResource("RectangleShape2D_m4rqr")
+
+[node name="area18" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(18, 314)
+shape = SubResource("RectangleShape2D_lae63")
+
+[node name="area19" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(-253, 82)
+shape = SubResource("RectangleShape2D_2iqe0")
+
+[node name="area20" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(272.5, 82)
+shape = SubResource("RectangleShape2D_nns01")
+
+[node name="area21" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(225.75, 476)
+shape = SubResource("RectangleShape2D_svsyw")
+
+[node name="area22" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
+position = Vector2(-197, 491)
+shape = SubResource("RectangleShape2D_vcwpx")
