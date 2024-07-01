@@ -67,7 +67,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr2b0"]
-size = Vector2(21, 45)
+size = Vector2(38, 69)
 
 [node name="Char_1" type="CharacterBody2D"]
 collision_mask = 15
@@ -75,6 +75,7 @@ script = ExtResource("1_66wbs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(1.48438, 1.48438)
 texture = ExtResource("1_tr3p2")
 hframes = 2
 vframes = 2
@@ -104,7 +105,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_pr2b0")
 
 [node name="AttackCD" type="Timer" parent="."]
