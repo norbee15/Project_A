@@ -70,6 +70,7 @@ _data = {
 size = Vector2(21, 45)
 
 [node name="Char_1" type="CharacterBody2D"]
+collision_mask = 15
 script = ExtResource("1_66wbs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
