@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id="GDScript_dwjdn"]
 script/source = "extends CharacterBody2D
 
-var score = 0
+var scpre = 0
 var speed = 400  # speed in pixels/sec
 
 func _physics_process(delta):
