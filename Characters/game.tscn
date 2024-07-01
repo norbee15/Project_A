@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0008ands8yrg"]
+
+[ext_resource type="PackedScene" uid="uid://bnm3x14jy61xa" path="res://Characters/node_2d.tscn" id="1_qwi1n"]
+[ext_resource type="Script" path="res://BasicAttackManager.gd" id="2_ohljp"]
+[ext_resource type="PackedScene" uid="uid://cv0tj2a4r1mxe" path="res://Characters/basic_attack.tscn" id="3_b3dt7"]
+[ext_resource type="PackedScene" uid="uid://bqkuah7u1cnep" path="res://Terrain/rock.tscn" id="3_rcrbn"]
+
+[node name="Game" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1170.0
+offset_bottom = 678.0
+color = Color(0.442206, 0.264528, 1.10701e-06, 1)
+
+[node name="Char_1" parent="." instance=ExtResource("1_qwi1n")]
+position = Vector2(488, 321)
+
+[node name="BasicAttackManager" type="Node2D" parent="."]
+script = ExtResource("2_ohljp")
+basic_attack_scene = ExtResource("3_b3dt7")
+
+[node name="Rock" parent="." instance=ExtResource("3_rcrbn")]
+position = Vector2(205, 283)
+
+[node name="Rock2" parent="." instance=ExtResource("3_rcrbn")]
+position = Vector2(773, 337)
+
+[node name="Char_2" parent="." instance=ExtResource("1_qwi1n")]
+position = Vector2(295, 431)
+
+[connection signal="basic_attack" from="Char_1" to="BasicAttackManager" method="_on_char_1_basic_attack"]
