@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfhyaklauc7j6"]
+[gd_scene load_steps=8 format=3 uid="uid://bnm3x14jy61xa"]
 
 [ext_resource type="Script" path="res://Scripts/node_2d.gd" id="1_66wbs"]
-[ext_resource type="Texture2D" path="res://Tilesets/Char_1.png" id="1_tr3p2"]
-[ext_resource type="PackedScene" path="res://Scenes/dash.tscn" id="3_ikrsi"]
+[ext_resource type="Texture2D" uid="uid://dg3fieb52andr" path="res://Tilesets/Char_1.png" id="1_tr3p2"]
+[ext_resource type="PackedScene" uid="uid://doxrgfjmxhgds" path="res://Scenes/dash.tscn" id="3_ikrsi"]
 
 [sub_resource type="Animation" id="Animation_u7q4a"]
 length = 0.1
