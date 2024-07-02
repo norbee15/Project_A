@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dawcn65tb5fs3"]
+
+[ext_resource type="PackedScene" uid="uid://jm3yqwch7ytu" path="res://Scenes/tile_map.tscn" id="1_ihh7q"]
+[ext_resource type="PackedScene" uid="uid://bnm3x14jy61xa" path="res://Scenes/Character.tscn" id="3_bl57c"]
+[ext_resource type="PackedScene" uid="uid://bcxx7bb7d5le0" path="res://Scenes/flipping_coin.tscn" id="3_y1sv7"]
+[ext_resource type="Script" path="res://Scripts/BasicAttackManager.gd" id="4_k5kkr"]
+[ext_resource type="PackedScene" uid="uid://cv0tj2a4r1mxe" path="res://Scenes/basic_attack.tscn" id="5_s324h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_ihh7q")]
+
+[node name="FlippingCoin" parent="." instance=ExtResource("3_y1sv7")]
+position = Vector2(12, -169)
+
+[node name="Char_1" parent="." instance=ExtResource("3_bl57c")]
+position = Vector2(12, 250)
+
+[node name="BasicAttackManager" type="Node2D" parent="."]
+script = ExtResource("4_k5kkr")
+basic_attack_scene = ExtResource("5_s324h")
