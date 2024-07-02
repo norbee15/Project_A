@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcxx7bb7d5le0"]
+[gd_scene load_steps=13 format=3 uid="uid://bcxx7bb7d5le0"]
 
+[ext_resource type="Script" path="res://Scripts/flipping_coin.gd" id="1_beqoa"]
 [ext_resource type="Texture2D" uid="uid://b1ivi1fteaws0" path="res://Tilesets/01coin.png" id="1_w6ypf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lck8j"]
@@ -69,7 +70,8 @@ animations = [{
 }]
 
 [node name="FlippingCoin" type="Area2D"]
-collision_mask = 2
+collision_mask = 3
+script = ExtResource("1_beqoa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.395, 1.395)
@@ -79,6 +81,7 @@ shape = SubResource("CircleShape2D_lck8j")
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_5qihg")
 autoplay = "default"
-frame_progress = 0.919002
+frame = 7
+frame_progress = 0.824754
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

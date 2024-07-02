@@ -8,6 +8,7 @@ var player : bool
 var player_name : String
 var dash_speed = 900
 var dash_duration = 0.1
+var score : int
 
 @onready var dash = $Dash
 
@@ -16,6 +17,7 @@ func _ready():
 	can_dash = true
 	player = true
 	player_name = "Savay"
+	score = 0
 
 func _physics_process(delta):
 	

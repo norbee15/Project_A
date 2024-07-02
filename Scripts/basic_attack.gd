@@ -17,6 +17,5 @@ func _on_body_entered(body):
 			body.speed = 0
 			body.get_node("StunCD").start()
 			queue_free()
-
-	if body.name == "Rock":
+	else:
 		queue_free()
