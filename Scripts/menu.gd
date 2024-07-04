@@ -22,3 +22,7 @@ func _on_exit_button_pressed():
 
 func _on_multi_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Mutliplayer_test.tscn")
+	
+func _on_join_server_pressed():
+	hide()
+	Server.join_server()
