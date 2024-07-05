@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://b7ji6pr46qf6a"]
+
+[resource]
+bg_color = Color(0.129412, 0.45098, 0.415686, 1)
+border_width_bottom = 8
+border_color = Color(0.129412, 0.45098, 0.415686, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
