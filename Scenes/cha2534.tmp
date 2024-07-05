@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://3dfpwt582tki"]
+
+[ext_resource type="Texture2D" uid="uid://bnb23nrpf471v" path="res://Tilesets/TX Player.png" id="1_1t2ek"]
+
+[sub_resource type="GDScript" id="GDScript_dwjdn"]
+script/source = "extends CharacterBody2D
+
+var scpre = 0
+var speed = 400  # speed in pixels/sec
+
+func _physics_process(delta):
+	var direction = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	velocity = direction * speed
+	move_and_slide()
+	
+	
+
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbjp"]
+atlas = ExtResource("1_1t2ek")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4inrx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbjp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3x4iq"]
+size = Vector2(20, 44)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+motion_mode = 1
+script = SubResource("GDScript_dwjdn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 0)
+sprite_frames = SubResource("SpriteFrames_4inrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 4)
+shape = SubResource("RectangleShape2D_3x4iq")
+debug_color = Color(0.0867813, 0.559872, 0.875404, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)

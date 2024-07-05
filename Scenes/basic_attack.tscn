@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv0tj2a4r1mxe"]
+
+[ext_resource type="Script" path="res://Scripts/basic_attack.gd" id="1_g6yfs"]
+[ext_resource type="Texture2D" uid="uid://bj00335wgy3fe" path="res://Tilesets/basic_attack_2.png" id="2_iq05m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ryy2g"]
+radius = 16.0312
+
+[node name="BasicAttack" type="Area2D"]
+collision_layer = 8
+collision_mask = 15
+script = ExtResource("1_g6yfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iq05m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ryy2g")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
