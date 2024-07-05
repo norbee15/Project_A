@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsmb402ouwaqy"]
+[gd_scene load_steps=10 format=3 uid="uid://dsmb402ouwaqy"]
 
 [ext_resource type="StyleBox" uid="uid://6irw3qb1i7rw" path="res://Scenes/UI/GreenPurpleStyle.tres" id="1_6fvty"]
 [ext_resource type="FontFile" uid="uid://cd2cf6iscy2ed" path="res://Tilesets/Other/04B_30__.TTF" id="1_ruwac"]
 [ext_resource type="StyleBox" uid="uid://dxn5lbtiqf67x" path="res://Scenes/UI/GreenPurplestyleHover.tres" id="2_grfae"]
 [ext_resource type="StyleBox" uid="uid://b7ji6pr46qf6a" path="res://Scenes/UI/GreenPurpleStylePressed.tres" id="2_vtpbe"]
 [ext_resource type="Texture2D" uid="uid://dmpbnllrxkxyb" path="res://Tilesets/Other/Névtelen.png" id="5_ejcmj"]
+[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="5_fi4ij"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xq01"]
 
@@ -40,6 +41,7 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_uip6b")
+script = ExtResource("5_fi4ij")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
