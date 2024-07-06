@@ -12,9 +12,9 @@ config_version=5
 
 config/name="Project_A"
 run/main_scene="res://Scenes/menu.tscn"
-origin/light
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
+origin/lightconfig/features=PackedStringArray("4.2", "Forward Plus")
 
 [input]
 

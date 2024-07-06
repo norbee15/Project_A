@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://jm3yqwch7ytu"]
+[gd_scene load_steps=31 format=3 uid="uid://jm3yqwch7ytu"]
 
 [ext_resource type="Texture2D" uid="uid://vgkut83lo3wn" path="res://Tilesets/TX Tileset Grass.png" id="1_l3yx7"]
 [ext_resource type="Texture2D" uid="uid://bqu6dy2kl1t6j" path="res://Tilesets/TX Tileset Stone Ground.png" id="2_1objv"]
 [ext_resource type="Texture2D" uid="uid://cjbtlu15o822h" path="res://Tilesets/TX Tileset Wall.png" id="3_kd28t"]
 [ext_resource type="Texture2D" uid="uid://c6fwgwacnlmxy" path="res://Tilesets/TX Struct.png" id="4_sd18w"]
+[ext_resource type="PackedScene" uid="uid://b8l8w1e527plk" path="res://Arenas/timing_trap.tscn" id="5_gvums"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1667n"]
 texture = ExtResource("1_l3yx7")
@@ -3196,3 +3197,27 @@ shape = SubResource("RectangleShape2D_svsyw")
 [node name="area22" type="CollisionShape2D" parent="Area2D" groups=["spawnareas"]]
 position = Vector2(-197, 491)
 shape = SubResource("RectangleShape2D_vcwpx")
+
+[node name="timing_trap" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(-318, 31)
+
+[node name="timing_trap2" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(-318, 76)
+
+[node name="timing_trap3" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(-316, 122)
+
+[node name="timing_trap4" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(341, 33)
+
+[node name="timing_trap5" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(341, 77)
+
+[node name="timing_trap6" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(342, 120)
+
+[node name="timing_trap7" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(711, -37)
+
+[node name="timing_trap8" parent="." instance=ExtResource("5_gvums")]
+position = Vector2(771, -37)
