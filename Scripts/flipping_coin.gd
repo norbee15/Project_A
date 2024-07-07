@@ -19,4 +19,3 @@ func spawn_New_Coin():
 	var y = randf_range(rndarea.position.y-30, rndarea.position.y+30)
 	self.position.x = x
 	self.position.y = y
-

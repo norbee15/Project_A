@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dawcn65tb5fs3"]
+[gd_scene load_steps=7 format=3 uid="uid://dawcn65tb5fs3"]
 
 [ext_resource type="PackedScene" uid="uid://jm3yqwch7ytu" path="res://Scenes/tile_map.tscn" id="1_ihh7q"]
 [ext_resource type="PackedScene" uid="uid://bnm3x14jy61xa" path="res://Scenes/Character.tscn" id="3_bl57c"]
 [ext_resource type="PackedScene" uid="uid://bcxx7bb7d5le0" path="res://Scenes/flipping_coin.tscn" id="3_y1sv7"]
 [ext_resource type="Script" path="res://Scripts/BasicAttackManager.gd" id="4_k5kkr"]
 [ext_resource type="PackedScene" uid="uid://cv0tj2a4r1mxe" path="res://Scenes/basic_attack.tscn" id="5_s324h"]
+[ext_resource type="Script" path="res://multiplayer/Multiplayer_HUD.gd" id="6_g340o"]
 
 [node name="Game" type="Node2D"]
 
@@ -20,4 +21,48 @@ position = Vector2(12, 250)
 script = ExtResource("4_k5kkr")
 basic_attack_scene = ExtResource("5_s324h")
 
+[node name="Multiplayer_HUD" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_g340o")
+
+[node name="Panel" type="Panel" parent="Multiplayer_HUD"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = 225.0
+offset_right = -199.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Multiplayer_HUD/Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 68.0
+
+[node name="Host" type="Button" parent="Multiplayer_HUD/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="Multiplayer_HUD/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://multiplayer/multiplayer_character.tscn")
+spawn_path = NodePath("../Players")
+
+[node name="Players" type="Node2D" parent="."]
+
 [connection signal="basic_attack" from="Char_1" to="BasicAttackManager" method="_on_char_1_basic_attack"]
+[connection signal="pressed" from="Multiplayer_HUD/Panel/VBoxContainer/Host" to="Multiplayer_HUD" method="_on_host_pressed"]
+[connection signal="pressed" from="Multiplayer_HUD/Panel/VBoxContainer/Join" to="Multiplayer_HUD" method="_on_join_pressed"]

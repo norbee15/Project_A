@@ -9,6 +9,12 @@ var player_name : String
 var dash_speed = 900
 var dash_duration = 0.1
 var score : int
+var direction = 1
+
+@export var player_id := 1:
+	set(id):
+		player_id = id
+		%InputSynchronizer.set_multiplayer_authority(id)
 
 @onready var dash = $Dash
 
@@ -18,32 +24,28 @@ func _ready():
 	player = true
 	player_name = "Savay"
 	score = 0
-
-func _physics_process(delta):
+	if multiplayer.get_unique_id() == player_id:
+		$Camera2D.make_current()
+	else:
+		$Camera2D.enabled = false
 	
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	if Input.is_action_just_pressed("dash") and can_dash:
-		dash.start_dash(dash_duration)
-		can_dash = false
-		$DashCD.start()
-	
-	var speed_calc = dash_speed if dash.is_dashing() else speed
-	velocity = direction * speed_calc
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_attack:
-		var aim = get_global_mouse_position() - position
-		basic_attack.emit(position, aim, name)
-		can_attack = false
-		$AttackCD.start()
-		
-	move_and_slide()
-	
+func _apply_animations(delta):
 	if velocity.length() > 0.0:
 		play_walk_animation()
 	else:
 		play_idle_animation()
 
+func _apply_movement_from_input(delta):
+	direction = %InputSynchronizer.input_direction
+	var speed_calc = dash_speed if dash.is_dashing() else speed
+	velocity.x = direction * speed_calc
+	move_and_slide()
+
+func _physics_process(delta):
+	if multiplayer.is_server():
+		_apply_movement_from_input(delta)
+		_apply_animations(delta)
+	
 func play_idle_animation():
 	%AnimationPlayer.play("Idle")
 	
