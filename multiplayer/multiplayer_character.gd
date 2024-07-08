@@ -38,7 +38,7 @@ func _apply_animations(delta):
 func _apply_movement_from_input(delta):
 	direction = %InputSynchronizer.input_direction
 	var speed_calc = dash_speed if dash.is_dashing() else speed
-	velocity.x = direction * speed_calc
+	velocity = direction * speed_calc
 	move_and_slide()
 
 func _physics_process(delta):

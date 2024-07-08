@@ -5,11 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dg3fieb52andr" path="res://Tilesets/Char_1.png" id="3_ni1cl"]
 [ext_resource type="PackedScene" uid="uid://doxrgfjmxhgds" path="res://Scenes/dash.tscn" id="4_avx86"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gsnmt"]
-properties/0/path = NodePath("InputSynchronizer:input_direction")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qxatm"]
 properties/0/path = NodePath(".:player_id")
 properties/0/spawn = true
@@ -17,6 +12,11 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:position")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gsnmt"]
+properties/0/path = NodePath("InputSynchronizer:input_direction")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [sub_resource type="Animation" id="Animation_u7q4a"]
 length = 0.1
@@ -87,13 +87,13 @@ size = Vector2(38, 69)
 collision_mask = 15
 script = ExtResource("1_fhgsh")
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_qxatm")
+
 [node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="."]
 unique_name_in_owner = true
 replication_config = SubResource("SceneReplicationConfig_gsnmt")
 script = ExtResource("2_w4k2t")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_qxatm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

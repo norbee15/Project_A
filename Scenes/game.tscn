@@ -9,6 +9,10 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://multiplayer/multiplayer_character.tscn")
+spawn_path = NodePath("../Players")
+
 [node name="TileMap" parent="." instance=ExtResource("1_ihh7q")]
 
 [node name="FlippingCoin" parent="." instance=ExtResource("3_y1sv7")]
@@ -56,10 +60,6 @@ text = "Host"
 [node name="Join" type="Button" parent="Multiplayer_HUD/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Join"
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://multiplayer/multiplayer_character.tscn")
-spawn_path = NodePath("../Players")
 
 [node name="Players" type="Node2D" parent="."]
 
