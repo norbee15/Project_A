@@ -11,10 +11,13 @@ var dash_duration = 0.1
 var score : int
 var direction = 1
 
+@onready var animated_sprite = %AnimationPlayer
+
 @export var player_id := 1:
 	set(id):
 		player_id = id
 		%InputSynchronizer.set_multiplayer_authority(id)
+
 
 @onready var dash = $Dash
 
@@ -30,10 +33,10 @@ func _ready():
 		$Camera2D.enabled = false
 	
 func _apply_animations(delta):
-	if velocity.length() > 0.0:
-		play_walk_animation()
-	else:
+	if velocity.x == 0 and velocity.y == 0:
 		play_idle_animation()
+	else:
+		play_walk_animation()
 
 func _apply_movement_from_input(delta):
 	direction = %InputSynchronizer.input_direction
@@ -42,15 +45,17 @@ func _apply_movement_from_input(delta):
 	move_and_slide()
 
 func _physics_process(delta):
-	if multiplayer.is_server():
+	#if multiplayer.is_server():
 		_apply_movement_from_input(delta)
+		
+	#if not multiplayer.is_server() || MultiplayerManager.host_mode_enabled:
 		_apply_animations(delta)
 	
 func play_idle_animation():
-	%AnimationPlayer.play("Idle")
+	animated_sprite.play("Idle")
 	
 func play_walk_animation():
-	%AnimationPlayer.play("Walk")
+	animated_sprite.play("Walk")
 
 func _on_attack_cd_timeout():
 	can_attack = true
